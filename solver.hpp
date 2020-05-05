@@ -2,9 +2,14 @@
 namespace solver{
     class RealVariable
     {
-    private:      
+    private:
+          
     public:
-    //RealVariable solve(RealVariable &re);
+    double a;
+    double b;
+    double c;
+    RealVariable();
+    RealVariable(double a , double b , double c);
     friend RealVariable& operator^(const double &num, RealVariable &re);
     friend RealVariable& operator^( RealVariable &re, const double &num);
     friend RealVariable& operator^( RealVariable &re1, RealVariable &re2);
@@ -23,7 +28,8 @@ namespace solver{
     friend RealVariable& operator==(const double &num,  RealVariable &re);
     friend RealVariable& operator==( RealVariable &re, const double &num);
     friend RealVariable& operator==( RealVariable &re1,  RealVariable &re2);
-  //  friend std::ostream& operator<<(std::ostream os, const RealVariable &re);
+    
+
     };
 
     class ComplexVariable
@@ -56,6 +62,7 @@ namespace solver{
   //  friend std::ostream& operator<<(std::ostream os, const RealVariable &re);
  
     };
-double solve(RealVariable &re);
 std::complex<double> solve(ComplexVariable &co);
+double solve(RealVariable &re);
+double quadratic_equation(double a , double b, double c);
 };
